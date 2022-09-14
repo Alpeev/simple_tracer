@@ -1,0 +1,12 @@
+cmake_minimum_required( VERSION 3.16.1)
+project(tracer)
+#add_library(a_ppm STATIC a_ppm.c)
+#add_library(alp_utils STATIC alp_utils.c)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+find_package(SDL2 REQUIRED)
+
+include_directories(${SDL2_INCLUDE_DIRS})
+#add_library(draw_poly STATIC draw_poly.c)
+#target_link_libraries(ppm_view ${SDL2_LIBRARIES})
+add_executable(tracer main.c)
+target_link_libraries(tracer ${SDL2_LIBRARIES})
